@@ -1,113 +1,142 @@
-import Image from 'next/image'
-
+"use client";
+import { projects } from "@/projects";
+import gsap from "gsap";
+import Image from "next/image";
+import Link from "next/link";
+import { useLayoutEffect, useRef, useState } from "react";
 export default function Home() {
+  const mainRef = useRef<HTMLDivElement | null>(null);
+  const headerRef = useRef<HTMLHeadingElement | null>(null);
+  const subHeadingRef = useRef<HTMLParagraphElement | null>(null);
+  const projectsRef = useRef<HTMLDivElement | null>(null);
+
+  const [bgColor, setBgColor] = useState("#000");
+  useLayoutEffect(() => {
+    if (headerRef.current?.children) {
+      let fadeInTimeline = gsap.timeline();
+      let subHeadingTimeline = gsap.timeline();
+      let children = headerRef.current.children;
+
+      fadeInTimeline
+        .set(children, {
+          y: 20,
+          opacity: 0,
+          ease: "linear",
+        })
+        .to(children, { y: 0, opacity: 1, duration: 0.5, stagger: 0.5 });
+      subHeadingTimeline
+        .set(subHeadingRef.current, {
+          y: 20,
+          opacity: 0,
+        })
+        .to(subHeadingRef.current, {
+          y: 0,
+          opacity: 1,
+          ease: "easeInOut",
+          delay: 2,
+          duration: 0.4,
+        });
+    }
+  }, []);
+
+  useLayoutEffect(() => {
+    let projectsTimeline = gsap.timeline();
+    let projects = projectsRef.current?.children;
+    if (projects) {
+      projectsTimeline
+        .set(projects, { y: 20, opacity: 0 })
+        .to(projects, { y: 0, opacity: 1, stagger: 0.2, delay: 3 });
+    }
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
+    <main
+      className={`lg:pt-8 pt-3 lg:px-8 px-3 bg-[#${bgColor}] transition-colors duration-300`}
+      ref={mainRef}
+    >
+      <div className="w-full flex flex-col h-2/5">
+        <h1
+          className="lg:text-7xl md:text-6xl text-4xl font-bold tracking-tighter max-w-3xl"
+          ref={headerRef}
+        >
+          <span className="block span1">Hello.</span>{" "}
+          <span className="block span2">I&apos;m Lateefat</span>
+          <span className="block span3"> Odeyemi-Aliu.</span>
+        </h1>
+        <p
+          className="text-right max-w-3xl self-end md:text-xl mt-10 lg:mt-6 text-sm leading-6 font-medium"
+          ref={subHeadingRef}
+        >
+          I&apos;m a creative & hardworking graphic designer based in Manchester
+          <span className="md:block"></span>
+          with two years of experience in creating professional artwork,
+          <span className="md:block"></span>
+          infographics and digital marketing content with Adobe Illustrator,
+          <span className="md:block"></span>
+          Photoshop and InDesign.<span className="block"></span>
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </div>
+      <div
+        className="lg:grid-cols-2 grid lg:py-24 py-10 gap-6"
+        ref={projectsRef}
+      >
+        {projects.map((project, index) => (
+          <div
+            className="lg:h-[600px] h-[300px] w-full bg-white rounded-xl relative overflow-clip cursor-pointer"
+            key={index}
           >
-            By{' '}
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              height={600}
+              width={600}
+              className="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-500"
+              alt={project.name}
+              src={project.src}
             />
-          </a>
+            <p className="absolute top-3 font-medium text-3xl left-3 ">
+              {project.name}
+            </p>
+            <div className="lg:flex gap-3  hidden absolute bottom-3 left-3">
+              {project.tags.map((tag) => (
+                <p className="border p-1 px-2 rounded-3xl " key={tag}>
+                  {tag}
+                </p>
+              ))}
+            </div>
+          </div>
+        ))}
+        {/* <div className="h-[600px] w-full bg-white"></div> */}
+      </div>
+      <footer className="mx-auto flex-col justify-between pt-24 hidden lg:flex">
+        <div className="mb-40">
+          <h1 className=" font-extrabold md:text-6xl text-5xl lg:text-7xl mb-8">
+            LET&apos;S WORK TOGETHER
+          </h1>
+          <Link
+            href="mailto:latifah.odeyemi@gmail.com"
+            className="lg:h-[180px] lg:w-[180px] h-[120px] w-[120px] rounded-full bg-white flex items-center justify-center transition-all text-black  text-md lg:text-lg  hover:scale-110 duration-300"
+          >
+            EMAIL ME <span className="ml-3">&gt;</span>
+          </Link>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+        <div className="mt-auto pb-12">
+          <p className="font-extrabold opacity-95  lg:text-3xl text-xl mb-4">
+            latifah.odeyemi@gmail.com
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          <div className="md:flex justify-between items-baseline">
+            <div className=" font-bold text-xs ">
+              <Link
+                href="https://www.linkedin.com/in/odeyemi-aliu-lateefat-8801a2197"
+                className="mr-2"
+              >
+                LINKEDIN
+              </Link>
+              <Link href="https://www.behance.net/odeyemilateefat">
+                BEHANCE
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
-  )
+  );
 }
