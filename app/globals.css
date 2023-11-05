@@ -16,11 +16,14 @@
   }
 }
 
-body {
-  background-color: black;
-  color: white;
+@font-face {
+  font-family: Forma DJR Deck;
+  src: url(../public/FormaDJRDeck-Bold.ttf);
 }
 
+.forma-deck {
+  font-family: Forma DJR Deck;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;

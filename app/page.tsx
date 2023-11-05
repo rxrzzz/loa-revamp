@@ -3,14 +3,15 @@ import { projects } from "@/projects";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
+import { Project } from "./components/project";
 export default function Home() {
   const mainRef = useRef<HTMLDivElement | null>(null);
   const headerRef = useRef<HTMLHeadingElement | null>(null);
   const subHeadingRef = useRef<HTMLParagraphElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
+  const linkRef = useRef<HTMLAnchorElement | null>(null);
 
-  const [bgColor, setBgColor] = useState("#000");
   useLayoutEffect(() => {
     if (headerRef.current?.children) {
       let fadeInTimeline = gsap.timeline();
@@ -44,19 +45,25 @@ export default function Home() {
     let projects = projectsRef.current?.children;
     if (projects) {
       projectsTimeline
-        .set(projects, { y: 20, opacity: 0 })
-        .to(projects, { y: 0, opacity: 1, stagger: 0.2, delay: 3 });
+        .set(projects, { y: 20, opacity: 0, display: "none" })
+        .to(projects, {
+          y: 0,
+          opacity: 1,
+          display: "grid",
+          stagger: 0.2,
+          delay: 3,
+        });
     }
   }, []);
 
   return (
     <main
-      className={`lg:pt-8 pt-3 lg:px-8 px-3 bg-[#${bgColor}] transition-colors duration-300`}
+      className={`lg:pt-8 pt-3 lg:px-8 px-3 transition-colors  duration-300`}
       ref={mainRef}
     >
-      <div className="w-full flex flex-col h-2/5">
+      <div className="w-full md:flex items-center  justify-between h-2/5">
         <h1
-          className="lg:text-7xl md:text-6xl text-4xl font-bold tracking-tighter max-w-3xl"
+          className="lg:text-7xl md:text-6xl text-4xl font-bold forma-deck max-w-3xl"
           ref={headerRef}
         >
           <span className="block span1">Hello.</span>{" "}
@@ -79,34 +86,20 @@ export default function Home() {
       <div
         className="lg:grid-cols-2 grid lg:py-24 py-10 gap-6"
         ref={projectsRef}
+        id="work"
       >
         {projects.map((project, index) => (
-          <div
-            className="lg:h-[600px] h-[300px] w-full bg-white rounded-xl relative overflow-clip cursor-pointer"
+          <Project
             key={index}
-          >
-            <Image
-              height={600}
-              width={600}
-              className="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-500"
-              alt={project.name}
-              src={project.src}
-            />
-            <p className="absolute top-3 font-medium text-3xl left-3 ">
-              {project.name}
-            </p>
-            <div className="lg:flex gap-3  hidden absolute bottom-3 left-3">
-              {project.tags.map((tag) => (
-                <p className="border p-1 px-2 rounded-3xl " key={tag}>
-                  {tag}
-                </p>
-              ))}
-            </div>
-          </div>
+            link={project.link}
+            name={project.name}
+            src={project.src}
+            tags={project.tags}
+          />
         ))}
         {/* <div className="h-[600px] w-full bg-white"></div> */}
       </div>
-      <footer className="mx-auto flex-col justify-between pt-24 hidden lg:flex">
+      <footer className="mx-auto flex-col justify-between pt-24 hidden">
         <div className="mb-40">
           <h1 className=" font-extrabold md:text-6xl text-5xl lg:text-7xl mb-8">
             LET&apos;S WORK TOGETHER
