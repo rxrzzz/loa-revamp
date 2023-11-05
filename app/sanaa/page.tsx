@@ -13,7 +13,7 @@ const Sanaa = () => {
         tags={["Brand Design", "Package Design", "Social Media", "Cosmetics"]}
         bgColor="#B2333F"
         textColor="#fff"
-        tagline="Skin &nbsp;and &nbsp;hair &nbsp;care, &nbsp;tailored &nbsp;to &nbsp;the &nbsp;African &nbsp;woman."
+        tagline="Skin &nbsp;  and &nbsp; hair &nbsp; care, &nbsp; tailored &nbsp; to &nbsp; the &nbsp; African &nbsp; woman."
         imageSrc="/sanaa/sanaa0.jpg"
         title="Sanaa"
       />

@@ -29,7 +29,7 @@ export const Overview = ({
   //   }, []);
   return (
     <section
-      className="md:flex flex-wrap font-roboto justify-between w-10/12 mx-auto lg:py-12 py-8 items-start font-semibold"
+      className="md:flex flex-wrap font-roboto justify-between md:w-10/12 mx-auto lg:py-12 py-8 items-start font-semibold"
       ref={sectionRef}
     >
       <div className="md:w-4/12 flex  md:gap-8 gap-4  text-xl items-start md:text-3xl lg:text-4xl -deck md:sticky  top-14">

@@ -15,7 +15,7 @@ export const ContentGrid = ({
   designSvg,
 }: Props) => {
   return (
-    <div className=" mx-auto relative">
+    <div className=" mx-auto relative mt-10 md:mt-0">
       <p className="forma-deck block text-xl md:text-2xl uppercase">{title}</p>
       {designSvg && (
         <Image

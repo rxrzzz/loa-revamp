@@ -65,7 +65,7 @@ export const Header = ({
       ref={mainRef}
       className="w-full"
     >
-      <div className="px-8 mx-auto pt-20">
+      <div className="md:px-8 px-2 mx-auto pt-20">
         <p className=" font-bold xl:text-3xl md:text-2xl text-xl  text max-w-3xl title     ">
           {title.split("").map((char, index) => {
             return (
