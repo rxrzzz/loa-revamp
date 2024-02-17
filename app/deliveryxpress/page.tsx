@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { BlackGrid } from "../components/blackgrid";
 import { Header } from "../components/header";
 import { Overview } from "../components/overview";
@@ -39,7 +38,7 @@ const DeliveryXpress = () => {
 I set out to design a cohesive brand identity, packaging and assets that communicated trust to customers from the moment they opened the app to handing packages over to delivery drivers to the point the packages are handed to their final recipients."
           imgSrc="/de/comp.png"
         />
-        <div className="hidden lg:block h-[80vh] rounded-xl mx-auto bg-[url('/de/de15.jpg')] bg-[60%] w-[100%]  bg-fixed mb-20"></div>
+        <div className="hidden lg:block h-[80vh]  mx-auto bg-[url('/de/de15.jpg')] bg-[60%] w-[100%]  bg-fixed mb-20"></div>
         <ContentGrid
           title=" Brand Design"
           designSvg="/laptopwork.svg"

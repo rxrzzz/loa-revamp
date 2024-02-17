@@ -16,7 +16,7 @@ export const ContentGrid = ({
 }: Props) => {
   return (
     <div className=" mx-auto relative mt-10 md:mt-0">
-      <p className="forma-deck block text-xl md:text-2xl uppercase">{title}</p>
+      <p className="forma-deck block text-md md:text-xl uppercase">{title}</p>
       {designSvg && (
         <Image
           height={400}
@@ -26,9 +26,9 @@ export const ContentGrid = ({
           className=" w-[50px] h-[50px] my-4"
         />
       )}
-      <div className="md:text-3xl text-lg">
+      <div className="md:text-xl text-justify text-md">
         <p
-          className="font-medium opacity-90 leading-snug"
+          className="font-medium opacity-80 leading-snug"
           dangerouslySetInnerHTML={{ __html: details }}
         ></p>
       </div>
@@ -40,7 +40,7 @@ export const ContentGrid = ({
             width={1500}
             src={img}
             key={img}
-            className="w-full bg- p-4 rounded-lg  object-cover border shadow-lg"
+            className="w-full bg- p-4   object-cover border shadow-lg"
           />
         ))}
       </div>

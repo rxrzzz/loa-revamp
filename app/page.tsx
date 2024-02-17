@@ -1,7 +1,6 @@
 "use client";
 import { projects } from "@/projects";
 import gsap from "gsap";
-import Image from "next/image";
 import Link from "next/link";
 import { useLayoutEffect, useRef } from "react";
 import { Project } from "./components/project";
@@ -10,7 +9,6 @@ export default function Home() {
   const headerRef = useRef<HTMLHeadingElement | null>(null);
   const subHeadingRef = useRef<HTMLParagraphElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
-  const linkRef = useRef<HTMLAnchorElement | null>(null);
 
   useLayoutEffect(() => {
     if (headerRef.current?.children) {
@@ -74,8 +72,8 @@ export default function Home() {
           className="text-right max-w-3xl self-end md:text-xl mt-10 lg:mt-6 text-sm leading-6 font-medium"
           ref={subHeadingRef}
         >
-          I&apos;m a creative & hardworking graphic designer based in Manchester
-          <span className="md:block"></span>
+          I&apos;m a creative graphic designer based in Manchester 
+          <span className="md:block"> </span>
           with two years of experience in creating professional artwork,
           <span className="md:block"></span>
           infographics and digital marketing content with Adobe Illustrator,

@@ -43,7 +43,7 @@ const Famasi = () => {
 The founders of the company had indicated that they’d prefer a font that that leverages the clever company name so I decided to use a wordmark and started exploring possible fonts for the wordmark."
           imgSrc="/fa/faprocess.jpeg"
         />
-        <div className="h-[80vh] rounded-xl mx-auto bg-[url('/fa/famasi15.jpg')] bg-[60%] w-[100%]  bg-fixed mb-20"></div>
+        <div className="h-[80vh]  mx-auto bg-[url('/fa/famasi15.jpg')] bg-[60%] w-[100%]  bg-fixed mb-20"></div>
         <ContentGrid
           title="Brand Design"
           designSvg="/beverage.svg"

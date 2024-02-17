@@ -39,19 +39,19 @@ export const Header = ({
         .set(".tagline span", { opacity: 0, y: 30 })
 
         .to(".tagline span", {
-          stagger: 0.1,
+          stagger: 0.01,
           y: 0,
           duration: 0.2,
           opacity: 1,
-          ease: "cubic-bezier(1,0,0,1);",
+          ease: "ceaseInOut",
         });
       tagTimeline.set(".tags p", { opacity: 0, y: 30 }).to(".tags p", {
         opacity: 1,
         y: 0,
         duration: 0.1,
         stagger: 0.1,
-        ease: "cubic-bezier(1,0,0,1);",
-        delay: 2,
+        ease: "linear",
+        delay: 0.5,
       });
     }, mainRef);
     return () => ctx.revert();

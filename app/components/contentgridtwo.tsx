@@ -17,7 +17,7 @@ export const ContentGridTwo = ({
   return (
     <div className=" mx-auto relative md:flex justify-between">
       <div className="md:text-3xl text-lg md:mb-20 mb-5 md:w-5/12 max-w-3xl md:sticky top-10 md:h-screen">
-        <p className="forma-deck block text-xl md:text-2xl uppercase ">
+        <p className="forma-deck block text-md md:text-xl uppercase ">
           {title}
         </p>
         {designSvg && (
@@ -30,20 +30,21 @@ export const ContentGridTwo = ({
           />
         )}
         <p
-          className="font-medium opacity-90 leading-snug max-w-xl"
+          className="font-medium opacity-80 md:text-xl text-md leading-snug max-w-xl"
           dangerouslySetInnerHTML={{ __html: details }}
         ></p>
       </div>
       <div className="flex flex-col md:w-6/12 gap-8 md:mb-20 mb-10">
         {imgSrcs.map((img) => (
-          <Image
-            alt=""
-            height={1000}
-            width={1000}
-            src={img}
-            key={img}
-            className="w-full  object-cover border shadow-lg "
-          />
+          <div key={img} className="" style={{}}>
+            <Image
+              alt=""
+              height={1000}
+              width={1000}
+              src={img}
+              className="w-full  object-cover border shadow-lg "
+            />
+          </div>
         ))}
       </div>
     </div>

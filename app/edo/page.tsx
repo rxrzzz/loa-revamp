@@ -37,7 +37,7 @@ const Edo = () => {
         "
           imgSrc="/edo/edo9.png"
         />
-        <div className="h-[80vh] rounded-xl mx-auto bg-[url('/edo/edo13.jpg')]  bg-[60%] w-[100%]  bg-fixed mb-20"></div>
+        <div className="h-[80vh] mx-auto bg-[url('/edo/edo13.jpg')]  bg-[60%] w-[100%]  bg-fixed mb-20"></div>
         <ContentGrid
           title="Brand Design"
           designSvg="/laptopwork.svg"

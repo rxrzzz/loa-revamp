@@ -35,7 +35,7 @@ const Sanaa = () => {
           imgSrc="/sanaa/sanaareviews.png"
           bgColor="#B2333F"
         />
-        <div className="hidden xl:block h-[80vh] rounded-xl mx-auto bg-[url('/sanaa/sanaam.jpg')] bg-[60%] w-[100%]  bg-fixed mb-20"></div>
+        <div className="hidden xl:block h-[80vh]  mx-auto bg-[url('/sanaa/sanaam.jpg')] bg-[60%] w-[100%]  bg-fixed mb-20"></div>
         <ContentGrid
           title="Brand Design"
           headerText="Sanaa: Brightness, Radiance"

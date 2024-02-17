@@ -29,7 +29,7 @@ export const ContentGridThree = ({
         ))}
       </div>
       <div className="md:text-3xl text-lg md:mb-20 mb-5 md:w-5/12 max-w-3xl md:sticky top-10 md:h-screen">
-        <p className="forma-deck block text-xl md:text-2xl uppercase ">
+        <p className="forma-deck block md:text-xl text-md uppercase ">
           {title}
         </p>
         {designSvg && (
@@ -42,7 +42,7 @@ export const ContentGridThree = ({
           />
         )}
         <p
-          className="font-medium opacity-90 leading-snug max-w-xl"
+          className="font-medium opacity-80  text-md md:text-xl leading-snug max-w-xl"
           dangerouslySetInnerHTML={{ __html: details }}
         ></p>
         <div className="flex md:hidden flex-col md:w-6/12 gap-8 md:mb-20 mb-10">
