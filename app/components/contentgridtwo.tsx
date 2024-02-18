@@ -30,7 +30,7 @@ export const ContentGridTwo = ({
           />
         )}
         <p
-          className="font-medium opacity-80 md:text-xl text-md leading-snug max-w-xl"
+          className="font-medium opacity-80 md:text-xl text-md leading-snug max-w-xl absans-regular"
           dangerouslySetInnerHTML={{ __html: details }}
         ></p>
       </div>

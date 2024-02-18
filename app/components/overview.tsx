@@ -52,17 +52,17 @@ export const Overview = ({
           Details
         </button>
       </div>
-      <div className="7/12 max-w-4xl md:text-4xl text-lg mt-6 md:mt-0 lg:text-5xl leading-snug">
+      <div className="7/12 max-w-4xl md:text-4xl text-lg mt-6 md:mt-0 lg:text-5xl leading-relaxed absans-regular">
         {divShown === "overview" ? (
           <p
             dangerouslySetInnerHTML={{ __html: overview }}
-            className="overview"
+            className="overview leading-snug"
           ></p>
         ) : (
           <></>
         )}
         {divShown === "details" ? (
-          <div className="details grid grid-cols-2 gap-12">
+          <div className="details grid grid-cols-2 gap-12 leading-snug">
             <div className="">
               <h2 className="opacity-80 mt-4 text-lg md:mb-0 mb-2 md:text-4xl">
                 Services

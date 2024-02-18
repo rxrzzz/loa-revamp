@@ -5,6 +5,7 @@ import { Header } from "../components/header";
 import { Overview } from "../components/overview";
 import { ContentGridTwo } from "../components/contentgridtwo";
 import { ContentGridThree } from "../components/contentgridthree";
+import ProjectFooter from "../components/project-footer";
 
 const Sanaa = () => {
   return (
@@ -76,6 +77,12 @@ const Sanaa = () => {
           designSvg="/smartphone.svg"
         />
       </div>
+      <ProjectFooter
+        nextName="Famasi"
+        nextLink="/famasi"
+        previousLink="/orangeworld"
+        previousName="Orange World"
+      />
     </>
   );
 };

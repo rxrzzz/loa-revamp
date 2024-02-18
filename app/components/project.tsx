@@ -12,6 +12,7 @@ export const Project = ({ link, name, src, tags }: Props) => {
   return (
     <Link
       href={link}
+      id={name.split(" ")[0]}
       className={`lg:h-[600px] h-[300px] w-full bg-tertiary relative overflow-clip cursor-pointer flex items-center justify-center hover:[&>img]:border-3 group transition-colors duration-300  
         }`}
     >
@@ -25,7 +26,7 @@ export const Project = ({ link, name, src, tags }: Props) => {
       <p className="absolute bottom-2 md:bottom-4 left-4  text-xl font-medium ">
         {name}
       </p>
-      <div className="xl:flex gap-4 text-sm absolute flex-wrap hidden bottom-4 right-4">
+      <div className="xl:flex gap-4 text-sm absolute absans-regular flex-wrap hidden bottom-4 right-4">
         {tags.map((tag) => (
           <p key={tag} className=" opacity-80">
             {tag}

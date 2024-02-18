@@ -75,7 +75,7 @@ export const Header = ({
             );
           })}
         </p>
-        <h1 className=" font-bold xl:text-6xl  md:text-4xl text-3xl mt-8 forma-deck tagline lg:whitespace-normal">
+        <h1 className=" font-bold xl:text-6xl  md:text-4xl text-3xl mt-8 forma-deck tagline lg:whitespace-normal ">
           {tagline.split(" ").map((char, index) => {
             return (
               <span className="inline-block" key={char + "-" + index}>
@@ -88,7 +88,7 @@ export const Header = ({
           {tags
             ? tags.map((tag) => (
                 <p
-                  className="border-2 md:text-sm  text-xs font-medium rounded-3xl p-1 px-2 mr-2 mb-2"
+                  className="border-2 md:text-sm  text-xs font-medium rounded-3xl p-1 px-2 mr-2 mb-2 absans-regular"
                   style={{ borderColor: textColor }}
                   key={tag}
                 >

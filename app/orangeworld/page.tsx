@@ -5,6 +5,7 @@ import { Overview } from "../components/overview";
 import { ContentGrid } from "../components/contentgrid";
 import { ContentGridTwo } from "../components/contentgridtwo";
 import { ContentGridThree } from "../components/contentgridthree";
+import ProjectFooter from "../components/project-footer";
 
 const OrangeWorld = () => {
   return (
@@ -84,6 +85,12 @@ const OrangeWorld = () => {
           imgSrcs={["/ow/ow27.jpg"]}
         />
       </div>
+      <ProjectFooter
+        nextName="Sanaa"
+        nextLink="/sanaa"
+        previousLink="/deliveryxpress"
+        previousName="Delivery Xpress"
+      />
     </>
   );
 };

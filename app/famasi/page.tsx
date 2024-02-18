@@ -4,6 +4,7 @@ import { ContentGridThree } from "../components/contentgridthree";
 import { ContentGridTwo } from "../components/contentgridtwo";
 import { Header } from "../components/header";
 import { Overview } from "../components/overview";
+import ProjectFooter from "../components/project-footer";
 
 const Famasi = () => {
   return (
@@ -79,6 +80,12 @@ The founders of the company had indicated that they’d prefer a font that that 
           ]}
         />
       </div>
+      <ProjectFooter
+        nextName="Sanaa"
+        nextLink="/sanaa"
+        previousLink="/edo"
+        previousName="Edo"
+      />
     </>
   );
 };

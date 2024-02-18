@@ -4,6 +4,7 @@ import { Overview } from "../components/overview";
 import { ContentGrid } from "../components/contentgrid";
 import { ContentGridThree } from "../components/contentgridthree";
 import { ContentGridTwo } from "../components/contentgridtwo";
+import ProjectFooter from "../components/project-footer";
 
 const DeliveryXpress = () => {
   return (
@@ -96,6 +97,12 @@ I set out to design a cohesive brand identity, packaging and assets that communi
           imgSrcs={["/de/de8.jpg"]}
         />
       </div>
+      <ProjectFooter
+        nextName="Orange World"
+        nextLink="/orangeworld"
+        previousLink="/deliveryxpress"
+        previousName="Delivery Xpress"
+      />
     </>
   );
 };

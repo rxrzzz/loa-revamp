@@ -9,7 +9,7 @@ type Props = {
 export const BlackGrid = ({ details, imgSrc, bgColor }: Props) => {
   return (
     <div
-      className="md:px-12  shadow-xl md:pt-12 pb-6 h-fit p-4 md:my-16 md:py-16 md:min-h-screen"
+      className="md:px-12  shadow-xl md:pt-12 pb-6 h-fit p-4 md:my-16 md:py-16 md:min-h-screen absans-regular"
       style={{ backgroundColor: bgColor }}
     >
       <div className="md:flex flex-wrap justify-between mx-auto py-16">

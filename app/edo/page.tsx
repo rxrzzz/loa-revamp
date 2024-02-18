@@ -5,6 +5,7 @@ import { Overview } from "../components/overview";
 import { ContentGrid } from "../components/contentgrid";
 import { ContentGridTwo } from "../components/contentgridtwo";
 import { ContentGridThree } from "../components/contentgridthree";
+import ProjectFooter from "../components/project-footer";
 
 const Edo = () => {
   return (
@@ -85,6 +86,12 @@ const Edo = () => {
           imgSrcs={["/edo/edo10.jpg", "/edo/edo14.jpg"]}
         />
       </div>
+      <ProjectFooter
+        nextName="Delivery Xpress"
+        nextLink="/deliveryxpress"
+        previousLink="/famasi"
+        previousName="Famasi"
+      />
     </>
   );
 };

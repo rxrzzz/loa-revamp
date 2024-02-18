@@ -21,8 +21,42 @@
   src: url(../public/FormaDJRDeck-Bold.ttf);
 }
 
+@font-face {
+  font-family: Absans Regular;
+  src: url(../public/Absans-Regular.woff2);
+}
+
+.absans-regular {
+  font-family: Absans Regular;
+}
+
 .forma-deck {
   font-family: Forma DJR Deck;
+}
+
+#Sanaa:hover {
+  background-color: #b2333f;
+  color: #fff;
+}
+
+#Famasi:hover {
+  background-color: #073043;
+  color: #fff;
+}
+
+#Edo:hover {
+  background-color: #c11111;
+  color: #fff;
+}
+
+#Delivery:hover {
+  background-color: #302883;
+  color: #fff;
+}
+
+#Orange:hover{
+  background-color: #DA3F07;
+  color: #fff;
 }
 /* width */
 ::-webkit-scrollbar {

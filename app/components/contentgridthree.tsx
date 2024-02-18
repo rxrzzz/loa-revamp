@@ -42,7 +42,7 @@ export const ContentGridThree = ({
           />
         )}
         <p
-          className="font-medium opacity-80  text-md md:text-xl leading-snug max-w-xl"
+          className="font-medium opacity-80  text-md md:text-lg leading-snug max-w-xl absans-regular"
           dangerouslySetInnerHTML={{ __html: details }}
         ></p>
         <div className="flex md:hidden flex-col md:w-6/12 gap-8 md:mb-20 mb-10">

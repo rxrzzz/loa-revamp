@@ -28,7 +28,7 @@ export const ContentGrid = ({
       )}
       <div className="md:text-xl text-justify text-md">
         <p
-          className="font-medium opacity-80 leading-snug"
+          className="font-medium opacity-80 leading-snug absans-regular"
           dangerouslySetInnerHTML={{ __html: details }}
         ></p>
       </div>
